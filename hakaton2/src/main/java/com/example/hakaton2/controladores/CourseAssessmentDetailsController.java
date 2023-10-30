@@ -40,6 +40,38 @@ public class CourseAssessmentDetailsController {
         return ResponseEntity.status(201).body("new item created");
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteCourseAssessmentDetails(@PathVariable Long id) {
+        Optional<CourseAssessmentDetails> optionalCourseAssessmentDetails = courseAssessmentDetailsRepository.findById(id);
+        if (optionalCourseAssessmentDetails.isPresent()) { // el Optional 
+            courseAssessmentDetailsRepository.deleteById(id);
+            return ResponseEntity.status(200).body("Deleted");
+        } else {
+            return ResponseEntity.status(404).body("Not Found");
+        }
+    }
+
+    @PutMapping("{id}")
+    public ResponseEntity<String> updateCourseAssessmentDetails(@PathVariable Long id, @RequestBody CourseAssessmentDetails courseAssessmentDetails) {
+        Optional<CourseAssessmentDetails> optionalCourseAssessmentDetails = courseAssessmentDetailsRepository.findById(id);
+        if (optionalCourseAssessmentDetails.isPresent()) {
+            // realizo una copia de lo que traje con el metodo findById()
+            CourseAssessmentDetails existingCourseAssessmentDetails = optionalCourseAssessmentDetails.get();
+            existingCourseAssessmentDetails.setScore(courseAssessmentDetails.getScore());
+            existingCourseAssessmentDetails.setSection(courseAssessmentDetails.getSection());
+            existingCourseAssessmentDetails.setSectionGroup(courseAssessmentDetails.getSectionGroup());
+            existingCourseAssessmentDetails.setCourseAssessment(courseAssessmentDetails.getCourseAssessment());
+            existingCourseAssessmentDetails.setProfessor(courseAssessmentDetails.getProfessor());
+            existingCourseAssessmentDetails.setStudent(courseAssessmentDetails.getStudent());
+            courseAssessmentDetailsRepository.save(existingCourseAssessmentDetails);
+
+            return ResponseEntity.status(200).body("Updated");
+        } else {
+            return ResponseEntity.status(404).body("Not Found");
+        }
+    }
+
+
     
 }
 
