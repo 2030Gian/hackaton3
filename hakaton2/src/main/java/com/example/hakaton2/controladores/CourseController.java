@@ -18,7 +18,7 @@ import java.util.Optional;
 public class CourseController {
     
     @Autowired CourseRepository courseRepository;
-
+    /* 
 
     @GetMapping
     public ResponseEntity<List<Course>> courses(){
@@ -35,5 +35,5 @@ public class CourseController {
 
     }
 
-
+    */
 }

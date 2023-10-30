@@ -19,7 +19,7 @@ public class CourseTypeController {
 
     @Autowired CourseTypeRepository courseTypeRepository;
 
-
+    /*
     @GetMapping
     public ResponseEntity<List<CourseType>> courseTypes(){
         List <CourseType> courseTypes = courseTypeRepository.findAll();
@@ -33,7 +33,7 @@ public class CourseTypeController {
         courseTypeRepository.save(courseType);
         return ResponseEntity.status(201).body("Create CourseType");
     }
-    
+    */
 }
 
 

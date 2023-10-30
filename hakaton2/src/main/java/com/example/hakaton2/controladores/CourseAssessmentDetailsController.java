@@ -22,7 +22,7 @@ public class CourseAssessmentDetailsController {
         List<CourseAssessmentDetails> courseAssessmentDetailss = courseAssessmentDetailsRepository.findAll();
         return new ResponseEntity<>(courseAssessmentDetailss, HttpStatus.OK);
     }
-
+    /* 
     @GetMapping("/{id}")
     public ResponseEntity<CourseAssessmentDetails> courseAssessmentDetailss(@PathVariable Long id){
     Optional<CourseAssessmentDetails> courseAssessmentDetails = courseAssessmentDetailsRepository.findById(id);
@@ -55,7 +55,6 @@ public class CourseAssessmentDetailsController {
     public ResponseEntity<String> updateCourseAssessmentDetails(@PathVariable Long id, @RequestBody CourseAssessmentDetails courseAssessmentDetails) {
         Optional<CourseAssessmentDetails> optionalCourseAssessmentDetails = courseAssessmentDetailsRepository.findById(id);
         if (optionalCourseAssessmentDetails.isPresent()) {
-            // realizo una copia de lo que traje con el metodo findById()
             CourseAssessmentDetails existingCourseAssessmentDetails = optionalCourseAssessmentDetails.get();
             existingCourseAssessmentDetails.setScore(courseAssessmentDetails.getScore());
             existingCourseAssessmentDetails.setSection(courseAssessmentDetails.getSection());
@@ -71,7 +70,7 @@ public class CourseAssessmentDetailsController {
         }
     }
 
-
+    */
     
 }
 

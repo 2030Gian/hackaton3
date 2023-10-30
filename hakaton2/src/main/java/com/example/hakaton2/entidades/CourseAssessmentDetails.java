@@ -43,7 +43,6 @@ public class CourseAssessmentDetails{
                 this.professor = professor;
                 this.student = student;               
                              }
-
     public Long getId() {
         return this.id;
     }

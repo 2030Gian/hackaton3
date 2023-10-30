@@ -20,7 +20,7 @@ public class CourseAssessmentController {
     
     @Autowired CourseAssessmentRepository courseAssessmentRepository;
 
-
+    /*
     @GetMapping
     public ResponseEntity<List<CourseAssessment>> courseAssessments(){
         List<CourseAssessment> courseAssessment = courseAssessmentRepository.findAll();
@@ -36,5 +36,5 @@ public class CourseAssessmentController {
 
     }
 
-
+    */
 }
