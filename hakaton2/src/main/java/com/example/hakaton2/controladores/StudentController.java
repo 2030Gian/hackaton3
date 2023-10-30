@@ -19,7 +19,7 @@ public class StudentController {
     @Autowired StudentRepository studentRepository; // nos sirve para usar el Jpa para hacer consultas 
     // a nuestra base de datos
 
-    /*
+    
     @GetMapping
     public ResponseEntity<List<Student>> students(){
         List<Student> students = studentRepository.findAll();
@@ -32,7 +32,7 @@ public class StudentController {
         return ResponseEntity.status(201).body("create student");
 
     }
-    */
+    
 
     
 }

@@ -17,11 +17,11 @@ public class Course{
 
     private String code;
 
-    private String HRgroup;
+    private String hrGroup;
 
     private Integer cycle;
 
-    private String VRGroup;
+    private String vrGroup;
 
 
     @OneToOne
@@ -34,15 +34,15 @@ public class Course{
     public Course(){};
 
     public Course(CourseType courseType,String name,
-             Integer credits, String code, String HRgroup, 
-             Integer cycle, String VRGroup){
+             Integer credits, String code, String hrGroup, 
+             Integer cycle, String vrGroup){
 
         this.name = name;
         this.credits = credits;
         this.code = code;
-        this.HRgroup = HRgroup;
+        this.hrGroup = hrGroup;
         this.cycle = cycle;
-        this.VRGroup = VRGroup;
+        this.vrGroup = vrGroup;
         this.courseType = courseType;
     };
 
@@ -78,12 +78,12 @@ public class Course{
         this.code = code;
     }
 
-    public String getHRgroup() {
-        return this.HRgroup;
+    public String getHrGroup() {
+        return this.hrGroup;
     }
 
-    public void setHRgroup(String HRgroup) {
-        this.HRgroup = HRgroup;
+    public void setHrGroup(String hrGroup) {
+        this.hrGroup = hrGroup;
     }
 
     public Integer getCycle() {
@@ -94,12 +94,12 @@ public class Course{
         this.cycle = cycle;
     }
 
-    public String getVRGroup() {
-        return this.VRGroup;
+    public String getVrGroup() {
+        return this.vrGroup;
     }
 
-    public void setVRGroup(String VRGroup) {
-        this.VRGroup = VRGroup;
+    public void setVrGroup(String vrGroup) {
+        this.vrGroup = vrGroup;
     }
 
 

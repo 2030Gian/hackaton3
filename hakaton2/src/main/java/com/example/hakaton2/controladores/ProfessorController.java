@@ -16,7 +16,7 @@ public class ProfessorController {
 
     @Autowired ProfessorRepository professorRepository;
 
-    /*
+    
     @GetMapping
     public ResponseEntity<List<Professor>> professors(){
         List<Professor> professors = professorRepository.findAll();
@@ -30,6 +30,6 @@ public class ProfessorController {
 
 
     }
-    */
+    
     
 }

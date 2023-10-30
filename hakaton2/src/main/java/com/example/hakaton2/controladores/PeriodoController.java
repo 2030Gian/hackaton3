@@ -19,7 +19,7 @@ public class PeriodoController {
 
     @Autowired PeriodoRepository periodoRepository;
 
-    /* 
+    
     @GetMapping
     public ResponseEntity<List<Periodo>> periodos(){
         List<Periodo> periodos = periodoRepository.findAll();
@@ -31,6 +31,6 @@ public class PeriodoController {
         periodoRepository.save(periodo);
         return ResponseEntity.status(201).body("Create periodo");
     }
-    */
+    
 }
 

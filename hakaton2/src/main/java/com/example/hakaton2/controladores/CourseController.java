@@ -18,7 +18,7 @@ import java.util.Optional;
 public class CourseController {
     
     @Autowired CourseRepository courseRepository;
-    /* 
+    
 
     @GetMapping
     public ResponseEntity<List<Course>> courses(){
@@ -30,10 +30,9 @@ public class CourseController {
     @PostMapping
     public ResponseEntity<String> course(@RequestBody Course course){
         courseRepository.save(course);
-
         return ResponseEntity.status(201).body("Create course");
 
     }
 
-    */
+    
 }

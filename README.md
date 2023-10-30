@@ -41,6 +41,29 @@
         "email": "gian.arteaga@utec.edu.pe",
         "code": "202120094"
     }
+}
 
+# CourseType
+---
+http://127.0.0.1:8080/course_type
+{
+    "name": "Ciencias"
+}
+---
+# Course
+---
+{    
+
+    "name": "Desarrollo Basado en Plataformas",
+    "credits":4,
+    "code" : "CS2021",
+    "hrGroup":"Computacion",
+    "cycle": 3,
+    "vrGroup": "5",
+    "courseType": {
+        "id": 2,
+        "name" :"Ciencias"
+    }
 
 }
+---
