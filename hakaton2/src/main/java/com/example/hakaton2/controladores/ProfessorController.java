@@ -11,7 +11,7 @@ import com.example.hakaton2.entidades.Professor;
 import java.util.List;
 import java.util.Optional;
 @RestController("ProfessorController")
-@RequestMapping("/professor")
+@RequestMapping("/professors")
 public class ProfessorController {
 
     @Autowired ProfessorRepository professorRepository;

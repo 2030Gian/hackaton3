@@ -21,17 +21,17 @@ public class CourseTypeController {
 
     
     @GetMapping
-    public ResponseEntity<List<CourseType>> courseTypes(){
+    public ResponseEntity<List<CourseType>> getCourseType(){
         List <CourseType> courseTypes = courseTypeRepository.findAll();
         return new ResponseEntity<>(courseTypes, HttpStatus.OK);
     }
     
 
     @PostMapping
-    public ResponseEntity<String> courseType(@RequestBody CourseType courseType){
+    public ResponseEntity<CourseType> addcourseType(@RequestBody CourseType courseType){
 
-        courseTypeRepository.save(courseType);
-        return ResponseEntity.status(201).body("Create CourseType");
+        CourseType newCourseType= courseTypeRepository.save(courseType);
+        return new ResponseEntity<>(newCourseType, HttpStatus.CREATED);
     }
     
 }

@@ -4,26 +4,27 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table(name = "professor")
+@Table(name = "professors")
 public class Professor {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false, unique = true)
-
     private Long id;
 
+    @Column
     private String name;
 
+    @Column
     private String lastName;
 
+    @Column
     private String email;
 
+    @Column(name = "fullName")
     private String fullName;
 
 
     @OneToOne(mappedBy = "professor")
     private CourseAssessmentDetails courseAssessmentDetails;
-
 
 
     public Professor(){};
@@ -38,42 +39,36 @@ public class Professor {
         return this.id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public String getName() {
+        return name;
     }
 
-    public String getName() {
-        return this.name;
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getFullName() {
+        return fullName;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getLastName() {
-        return this.lastName;
-    }
-
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return this.email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getFullName() {
-        return this.fullName;
-    }
-
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
-
-
     
 }

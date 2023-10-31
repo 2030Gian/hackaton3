@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController("PeriodoController")
-@RequestMapping("/periodo")
+@RequestMapping("/periodos")
 public class PeriodoController {
 
     @Autowired PeriodoRepository periodoRepository;

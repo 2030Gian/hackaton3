@@ -1,18 +1,19 @@
 package com.example.hakaton2.entidades;
 
 import jakarta.persistence.*;
-
+// import com.example.hakaton2.entidades.CourseType;
 
 @Entity
-@Table(name = "course")
+@Table(name = "courses")
 public class Course{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false, unique = true)
     private Long id;
-
+    
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "credits")
     private Integer credits;
 
     private String code;
@@ -23,13 +24,12 @@ public class Course{
 
     private String vrGroup;
 
+    @OneToOne(mappedBy = "course")
+    private CourseAssessment courseAssessment;
 
     @OneToOne
     @JoinColumn(name = "id_course_type")
     private CourseType courseType;
-
-    @OneToOne(mappedBy = "course")
-    private CourseAssessment courseAssessment;
 
     public Course(){};
 
@@ -47,15 +47,11 @@ public class Course{
     };
 
     public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+        return id;
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public void setName(String name) {
@@ -63,7 +59,7 @@ public class Course{
     }
 
     public Integer getCredits() {
-        return this.credits;
+        return credits;
     }
 
     public void setCredits(Integer credits) {
@@ -71,7 +67,7 @@ public class Course{
     }
 
     public String getCode() {
-        return this.code;
+        return code;
     }
 
     public void setCode(String code) {
@@ -79,7 +75,7 @@ public class Course{
     }
 
     public String getHrGroup() {
-        return this.hrGroup;
+        return hrGroup;
     }
 
     public void setHrGroup(String hrGroup) {
@@ -87,7 +83,7 @@ public class Course{
     }
 
     public Integer getCycle() {
-        return this.cycle;
+        return cycle;
     }
 
     public void setCycle(Integer cycle) {
@@ -95,7 +91,7 @@ public class Course{
     }
 
     public String getVrGroup() {
-        return this.vrGroup;
+        return vrGroup;
     }
 
     public void setVrGroup(String vrGroup) {
@@ -104,12 +100,11 @@ public class Course{
 
 
     public CourseType getCourseType() {
-        return this.courseType;
+        return courseType;
     }
 
     public void setCourseType(CourseType courseType) {
         this.courseType = courseType;
     }
-
     
 }

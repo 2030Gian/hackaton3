@@ -3,12 +3,11 @@ package com.example.hakaton2.entidades;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "course_type")
+@Table(name = "course_types")
 public class CourseType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false, unique = true)
     private Long id;
 
     @Column(name = "name")
@@ -26,10 +25,6 @@ public class CourseType {
 
     public Long getId() {
         return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {

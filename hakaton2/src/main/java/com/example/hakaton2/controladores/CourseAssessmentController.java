@@ -20,20 +20,17 @@ public class CourseAssessmentController {
     
     @Autowired CourseAssessmentRepository courseAssessmentRepository;
 
-    
     @GetMapping
-    public ResponseEntity<List<CourseAssessment>> courseAssessments(){
+    public ResponseEntity<List<CourseAssessment>> getCourseAssessment(){
         List<CourseAssessment> courseAssessment = courseAssessmentRepository.findAll();
-
-        return new ResponseEntity<>(courseAssessment,HttpStatus.OK);
+        return new ResponseEntity<>(courseAssessment, HttpStatus.OK);
     }
 
+
     @PostMapping
-    public ResponseEntity<String> courseAssessment(@RequestBody CourseAssessment courseAssessment){
-        courseAssessmentRepository.save(courseAssessment);
-
-        return ResponseEntity.status(201).body("Create courseAssessment");
-
+    public ResponseEntity<CourseAssessment> addCourseAssessment(@RequestBody CourseAssessment courseAssessment) {
+        CourseAssessment newCourseAssessment= courseAssessmentRepository.save(courseAssessment);
+        return new ResponseEntity<>(newCourseAssessment,HttpStatus.CREATED);
     }
 
     

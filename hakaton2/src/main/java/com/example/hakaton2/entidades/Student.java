@@ -5,18 +5,20 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table(name =  "student")
+@Table(name =  "students")
 public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false, unique = true)
     private Long id;
 
+    @Column
     private String name;
 
+    @Column
     private String email;
 
+    @Column(name = "code")
     private String code;
 
 
@@ -36,36 +38,29 @@ public class Student {
         return this.id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public String getName() {
+        return name;
     }
 
-    public String getName() {
-        return this.name;
+    public String getEmail() {
+        return email;
+    }
+
+    public String getCode() {
+        return code;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getEmail() {
-        return this.email;
-    }
-
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getCode() {
-        return this.code;
-    }
 
     public void setCode(String code) {
         this.code = code;
     }
-
-
-
-    
 
 }

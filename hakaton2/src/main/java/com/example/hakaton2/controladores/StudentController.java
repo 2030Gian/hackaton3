@@ -13,7 +13,7 @@ import java.util.Optional;
 import java.util.List;
 
 @RestController("StudentController")
-@RequestMapping("/student")
+@RequestMapping("/students")
 public class StudentController {
 
     @Autowired StudentRepository studentRepository; // nos sirve para usar el Jpa para hacer consultas 

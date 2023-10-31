@@ -14,25 +14,27 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController("CourseController")
-@RequestMapping("/course")
+@RequestMapping("/courses")
 public class CourseController {
     
     @Autowired CourseRepository courseRepository;
     
 
     @GetMapping
-    public ResponseEntity<List<Course>> courses(){
+    public ResponseEntity<List<Course>> getcourse(){
         List<Course> courses = courseRepository.findAll();
 
         return new ResponseEntity<>(courses,HttpStatus.OK);
     }
 
     @PostMapping
-    public ResponseEntity<String> course(@RequestBody Course course){
-        courseRepository.save(course);
-        return ResponseEntity.status(201).body("Create course");
+    public ResponseEntity<Course> course(@RequestBody Course course){
+        Course newCourse = courseRepository.save(course);
+        return new ResponseEntity<>(newCourse, HttpStatus.CREATED);
 
     }
+
+    
 
     
 }

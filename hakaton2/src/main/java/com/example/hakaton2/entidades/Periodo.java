@@ -2,13 +2,14 @@ package com.example.hakaton2.entidades;
 
 import jakarta.persistence.*;
 @Entity
-@Table(name = "periodo")
+@Table(name = "periodos")
 public class Periodo{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false, unique = true)
     private Long id;
 
+    @Column(name = "name")
     private String name;
 
     private String code;
@@ -31,12 +32,8 @@ public class Periodo{
         return this.id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public void setName(String name) {
@@ -45,7 +42,7 @@ public class Periodo{
 
 
     public String getCode() {
-        return this.code;
+        return code;
     }
 
     public void setCode(String code) {
