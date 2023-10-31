@@ -15,7 +15,7 @@ import com.example.hakaton2.repositorios.CourseAssessmentRepository;
 import java.util.List;
 
 @RestController("CourseAssessmentController")
-@RequestMapping("/course_assessment")
+@RequestMapping("/course_assessments")
 public class CourseAssessmentController {
     
     @Autowired CourseAssessmentRepository courseAssessmentRepository;

@@ -1,69 +1,158 @@
 # hackaton2
-
+---
 {
     "score" : "15",
     "section" : "A708",
     "sectionGroup": "Grupo 1",
-    {
-        {
-            "name":"2021-2", 
-            "code":"1234"
-        }, 
-
-        {    
-            {
-                "name":"exigente"
+    "courseAssessment":{
+        "id":6,
+        "periodo":{
+            "id":1,
+            "name": "2023-2",
+            "code": "FundationRosExp"
+        },
+        "course":{ 
+            "id":8, 
+            "courseType":{
+                "id": 1,
+                "name" :"Ciencias"
             },
 
-            "name": "Desarrollo Basado en Plataformas",
+            "name": "Calculo 1",
             "credits":4,
-            "code" :"CS2021",
-            "HRgroup":"Computacion",
-            "cycle": 3,
-            "VRGroup": "5"
+            "code" : "CC2021",
+            "hrGroup":"RosExp",
+            "cycle": 1,
+            "vrGroup": "1"
         },
-        "title": "Buenas notas",
-        "tipoNota":"Excelente",
-        "numNota": "Primeros puestos",
-        "nomenclatura":"AD" 
+        "title":"Prueba de Entrada",
+        "tipoNota":"Aprobado",
+        "numNota": "20",
+        "nomenclatura":"AD"
     },
 
-    {
-        "name" :"Jesus",
-        "lastName":" Bellido",
+    "professor":{
+        "id":1,
+        "name": "Jesus",
+        "lastName": "Bellido",
         "email":"jesus.bellido@utec.edu.pe",
-        "fullName": "Jesus Bellido"
+        "fullName":"Jesus Bellido"
 
     },
 
-    {
+    "student":{
+        "id":1,
         "name": "Gian Marco",
         "email": "gian.arteaga@utec.edu.pe",
         "code": "202120094"
     }
 }
 
-# CourseType
+![Alt text](image.png)
 ---
-http://127.0.0.1:8080/course_type
+# Professor
+
+---
+http://127.0.0.1:9090/professors
 {
-    "name": "Ciencias"
+    "name": "Jesus",
+    "lastName": "Bellido",
+    "email":"jesus.bellido@utec.edu.pe",
+    "fullName":"Jesus Bellido"
 }
+![Alt text](image-2.png)
 ---
+
+
+# Student
+---
+http://127.0.0.1:9090/students
+{
+    "name": "Gian Marco",
+    "email": "gian.arteaga@utec.edu.pe",
+    "code": "202120094"
+}
+![Alt text](image-1.png)
+---
+
+# CourseAssessment
+
+---
+http://127.0.0.1:9090/course_assessments
+
+{
+
+    "course":{  
+    "id": 2,      
+    "name": "Ecuaciones Diferenciales",
+    "credits":4,
+    "code" : "CC2021",
+    "hrGroup":"RosExp",
+    "cycle": 3,
+    "vrGroup": "1",
+    "courseType": {
+        "id": 3,
+        "name" :"Ciencias"
+    }
+
+    },
+
+    "periodo":{
+        "id":1,
+        "code":"FundacionRosExp",
+        "name":"2023"
+    },
+    "title":"Prueba de Entrada",
+    "tipoNota":"Aprobado",
+    "numNota": "20",
+    "nomenclatura":"AD"
+
+
+
+}
+![Alt text](image-3.png)
+---
+# Periodo
+---
+http://127.0.0.1:9090/periodos
+{    
+    "name": "2023-2",
+    "code": "FundationRosExp"
+}
+
+![Alt text](image-6.png)
+---
+
+
 # Course
 ---
+http://127.0.0.1:9090/courses
 {    
 
-    "name": "Desarrollo Basado en Plataformas",
+    "name": "Calculo 1",
     "credits":4,
-    "code" : "CS2021",
-    "hrGroup":"Computacion",
-    "cycle": 3,
-    "vrGroup": "5",
+    "code" : "CC2021",
+    "hrGroup":"RosExp",
+    "cycle": 1,
+    "vrGroup": "1",
     "courseType": {
-        "id": 2,
+        "id": 1,
         "name" :"Ciencias"
     }
 
 }
+
+![Alt text](image-5.png)
 ---
+
+# CourseType
+---
+http://127.0.0.1:9090/course_types
+{
+    "name": "Ciencias"
+}
+
+![Alt text](image-4.png)
+---
+
+

@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController("CourseTypeController")
-@RequestMapping("/course_type")
+@RequestMapping("/course_types")
 public class CourseTypeController {
 
     @Autowired CourseTypeRepository courseTypeRepository;

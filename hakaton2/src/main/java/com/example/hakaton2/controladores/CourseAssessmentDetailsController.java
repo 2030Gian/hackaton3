@@ -68,7 +68,6 @@ public class CourseAssessmentDetailsController {
 
     
 
-    /*
     @GetMapping("/{id}")
     public ResponseEntity<CourseAssessmentDetails> courseAssessmentDetailss(@PathVariable Long id){
     Optional<CourseAssessmentDetails> courseAssessmentDetails = courseAssessmentDetailsRepository.findById(id);
@@ -91,26 +90,6 @@ public class CourseAssessmentDetailsController {
         }
     }
 
-    @PutMapping("{id}")
-    public ResponseEntity<String> updateCourseAssessmentDetails(@PathVariable Long id, @RequestBody CourseAssessmentDetails courseAssessmentDetails) {
-        Optional<CourseAssessmentDetails> optionalCourseAssessmentDetails = courseAssessmentDetailsRepository.findById(id);
-        if (optionalCourseAssessmentDetails.isPresent()) {
-            CourseAssessmentDetails existingCourseAssessmentDetails = optionalCourseAssessmentDetails.get();
-            existingCourseAssessmentDetails.setScore(courseAssessmentDetails.getScore());
-            existingCourseAssessmentDetails.setSection(courseAssessmentDetails.getSection());
-            existingCourseAssessmentDetails.setSectionGroup(courseAssessmentDetails.getSectionGroup());
-            existingCourseAssessmentDetails.setCourseAssessment(courseAssessmentDetails.getCourseAssessment());
-            existingCourseAssessmentDetails.setProfessor(courseAssessmentDetails.getProfessor());
-            existingCourseAssessmentDetails.setStudent(courseAssessmentDetails.getStudent());
-            courseAssessmentDetailsRepository.save(existingCourseAssessmentDetails);
-
-            return ResponseEntity.status(200).body("Updated");
-        } else {
-            return ResponseEntity.status(404).body("Not Found");
-        }
-    }
-
-    */
 
     @PutMapping("{id}")
     public ResponseEntity<String> updateCourseAssessmentDetails(@PathVariable Long id, @RequestBody CourseAssessmentDetails courseAssessmentDetails) {
