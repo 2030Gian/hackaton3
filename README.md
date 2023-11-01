@@ -77,21 +77,21 @@ http://127.0.0.1:9090/students
 # CourseAssessment
 
 ---
-http://127.0.0.1:9090/course_assessments
+```http://127.0.0.1:9090/course_assessments```
 ```
 {
 
-    "course":{  
-    "id": 2,      
-    "name": "Ecuaciones Diferenciales",
+    "course":{    
+    "id":1,
+    "name": "Desarrollo Basado en Plataformas",
     "credits":4,
-    "code" : "CC2021",
+    "code" : "CS2031",
     "hrGroup":"RosExp",
     "cycle": 3,
-    "vrGroup": "1",
+    "vrGroup": "Computacion",
     "courseType": {
-        "id": 3,
-        "name" :"Ciencias"
+        "id": 1,
+        "name" :"Ciencias de la Computacion"
     }
 
     },
@@ -101,10 +101,45 @@ http://127.0.0.1:9090/course_assessments
         "code":"FundacionRosExp",
         "name":"2023"
     },
-    "title":"Prueba de Entrada",
+    "title":"Hakaton 3",
     "tipoNota":"Aprobado",
     "numNota": "20",
     "nomenclatura":"AD"
+    
+}
+```
+![Alt text](image-18.png)
+![Alt text](image-20.png)
+![Alt text](image-19.png)
+
+```
+{
+
+    "course":{    
+
+    "name": "Base de Datos I",
+    "credits":4,
+    "code" : "CS2041",
+    "hrGroup":"RosExp",
+    "cycle": 3,
+    "vrGroup": "Computacion",
+    "courseType": {
+        "id": 2,
+        "name" :"Ciencias de Datos"
+    }
+
+    },
+
+    "periodo":{
+        "id":1,
+        "code":"FundacionRosExp",
+        "name":"2023"
+    },
+    "title":"Examen Parcial 3",
+    "tipoNota":"Aprobado",
+    "numNota": "17",
+    "nomenclatura":"AD"
+    
 }
 ```
 ---
@@ -120,6 +155,26 @@ http://127.0.0.1:9090/course_assessments
 ![Alt text](image-15.png)
 ![Alt text](image-16.png)
 ![Alt text](image-17.png)
+
+```
+{    
+    "name": "2023-2",
+    "code": "BD"
+}
+```
+![Alt text](image-21.png)
+![Alt text](image-23.png)
+![Alt text](image-22.png)
+
+```
+{    
+    "name": "2023-2",
+    "code": "CC"
+}
+```
+![Alt text](image-24.png)
+![Alt text](image-26.png)
+![Alt text](image-25.png)
 ---
 
 
