@@ -1,7 +1,7 @@
 # Hackatón
-
+![Alt text](HT3.png)
 # CourseAssessmentDetails
----
+```
 {
     "score" : "15",
     "section" : "A708",
@@ -49,9 +49,7 @@
         "code": "202120094"
     }
 }
-
-![Alt text](image.png)
----
+```
 # Professor
 
 ---
@@ -62,7 +60,6 @@ http://127.0.0.1:9090/professors
     "email":"jesus.bellido@utec.edu.pe",
     "fullName":"Jesus Bellido"
 }
-![Alt text](image-2.png)
 ---
 
 
@@ -74,14 +71,14 @@ http://127.0.0.1:9090/students
     "email": "gian.arteaga@utec.edu.pe",
     "code": "202120094"
 }
-![Alt text](image-1.png)
+
 ---
 
 # CourseAssessment
 
 ---
 http://127.0.0.1:9090/course_assessments
-
+```
 {
 
     "course":{  
@@ -108,53 +105,113 @@ http://127.0.0.1:9090/course_assessments
     "tipoNota":"Aprobado",
     "numNota": "20",
     "nomenclatura":"AD"
-
-
-
 }
-![Alt text](image-3.png)
+```
 ---
 # Periodo
 ---
-http://127.0.0.1:9090/periodos
+```http://127.0.0.1:9090/periodos```
+```
 {    
     "name": "2023-2",
     "code": "FundationRosExp"
 }
-
-![Alt text](image-6.png)
+```
+![Alt text](image-15.png)
+![Alt text](image-16.png)
+![Alt text](image-17.png)
 ---
 
 
-# Course
+## Course
 ---
-http://127.0.0.1:9090/courses
+```http://127.0.0.1:9090/courses```
+```
 {    
 
-    "name": "Calculo 1",
+    "name": "Desarrollo Basado en Plataformas",
     "credits":4,
-    "code" : "CC2021",
+    "code" : "CS2031",
     "hrGroup":"RosExp",
-    "cycle": 1,
-    "vrGroup": "1",
+    "cycle": 3,
+    "vrGroup": "Computacion",
     "courseType": {
         "id": 1,
+        "name" :"Ciencias de la Computacion"
+    }
+
+}
+```
+![Alt text](image.png)
+![Alt text](image-1.png)
+![Alt text](image-2.png)
+
+```
+{    
+
+    "name": "Base de Datos I",
+    "credits":4,
+    "code" : "CS2041",
+    "hrGroup":"RosExp",
+    "cycle": 3,
+    "vrGroup": "Computacion",
+    "courseType": {
+        "id": 2,
+        "name" :"Ciencias de Datos"
+    }
+
+}
+```
+![Alt text](image-6.png)
+![Alt text](image-7.png)
+![Alt text](image-8.png)
+
+```
+{    
+
+    "name": "Opticas y Ondas",
+    "credits":4,
+    "code" : "CC1123",
+    "hrGroup":"RosExp",
+    "cycle": 2,
+    "vrGroup": "Ciencias",
+    "courseType": {
+        "id": 4,
         "name" :"Ciencias"
     }
 
 }
-
-![Alt text](image-5.png)
+```
+![Alt text](image-12.png)
+![Alt text](image-13.png)
+![Alt text](image-14.png)
 ---
 
-# CourseType
+## CourseType
 ---
-http://127.0.0.1:9090/course_types
+```http://127.0.0.1:9090/course_types```
+```
 {
-    "name": "Ciencias"
+    "name": "Ciencias de la Computacion (CS)"
 }
+```
+```
+{
+    "name": "Ciencias de Datos (CD)"
+}
+```
 
+```
+{
+    "name": "Opticas y Ondas"
+}
+```
+![Alt text](image-3.png)
+![Alt text](image-5.png)
 ![Alt text](image-4.png)
+![Alt text](image-11.png)
+![Alt text](image-9.png)
+![Alt text](image-10.png)
 ---
 
 
