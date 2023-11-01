@@ -53,25 +53,35 @@
 # Professor
 
 ---
-http://127.0.0.1:9090/professors
+```http://127.0.0.1:9090/professors```
+```
 {
     "name": "Jesus",
     "lastName": "Bellido",
     "email":"jesus.bellido@utec.edu.pe",
     "fullName":"Jesus Bellido"
 }
+```
+![Alt text](image-36.png)
+![Alt text](image-37.png)
+![Alt text](image-38.png)
 ---
 
 
 # Student
 ---
-http://127.0.0.1:9090/students
+```http://127.0.0.1:9090/students```
+```
 {
     "name": "Gian Marco",
     "email": "gian.arteaga@utec.edu.pe",
     "code": "202120094"
 }
+```
 
+![Alt text](image-33.png)
+![Alt text](image-35.png)
+![Alt text](image-34.png)
 ---
 
 # CourseAssessment
@@ -116,7 +126,7 @@ http://127.0.0.1:9090/students
 {
 
     "course":{    
-
+    "id":2,
     "name": "Base de Datos I",
     "credits":4,
     "code" : "CS2041",
@@ -142,6 +152,42 @@ http://127.0.0.1:9090/students
     
 }
 ```
+![Alt text](image-27.png)
+![Alt text](image-29.png)
+![Alt text](image-28.png)
+
+```
+{
+
+    "course":{    
+    "id":3,
+    "name": "Opticas y Ondas",
+    "credits":4,
+    "code" : "CC1123",
+    "hrGroup":"RosExp",
+    "cycle": 2,
+    "vrGroup": "Ciencias",
+    "courseType": {
+        "id": 4,
+        "name" :"Ciencias"
+    }
+    },
+
+    "periodo":{
+    "id":3,    
+    "name": "2023-2",
+    "code": "CC"
+    },
+    "title":"Examen Parcial 3",
+    "tipoNota":"Retirado",
+    "numNota": "Retirado",
+    "nomenclatura":"Retirado"
+    
+}
+```
+![Alt text](image-30.png)
+![Alt text](image-32.png)
+![Alt text](image-31.png)
 ---
 # Periodo
 ---
