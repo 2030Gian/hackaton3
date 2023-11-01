@@ -1,7 +1,6 @@
 package com.example.hakaton2.entidades;
 
 import jakarta.persistence.*;
-// import com.example.hakaton2.entidades.CourseType;
 
 @Entity
 @Table(name = "courses")

@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 
 import com.example.hakaton2.entidades.CourseAssessmentDetails;
 import com.example.hakaton2.repositorios.CourseAssessmentDetailsRepository;
-import com.example.hakaton2.entidades.Course;
 
 import com.example.hakaton2.repositorios.CourseAssessmentRepository;
 import com.example.hakaton2.entidades.CourseAssessment;
@@ -46,13 +45,17 @@ public class CourseAssessmentDetailsController {
     @Autowired
     private ProfessorRepository professorRepository;
 
-    @Autowired CourseAssessmentRepository courseAssessmentRepository;
+    @Autowired
+    private CourseAssessmentRepository courseAssessmentRepository;
 
-    @Autowired PeriodoRepository periodoRepository;
+    @Autowired 
+    private PeriodoRepository periodoRepository;
 
-    @Autowired CourseRepository courseRepository;
+    @Autowired 
+    private CourseRepository courseRepository;
 
-    @Autowired CourseTypeRepository courseTypeRepository;
+    @Autowired 
+    private CourseTypeRepository courseTypeRepository;
 
     @GetMapping
     public ResponseEntity<List<CourseAssessmentDetails>> getCourseAssessmentDetails(){
@@ -60,36 +63,21 @@ public class CourseAssessmentDetailsController {
         return new ResponseEntity<>(courseAssessmentDetails, HttpStatus.OK);
     }
 
-    @PostMapping
-    public ResponseEntity<CourseAssessmentDetails> addCourseAssessmentDetails(@RequestBody CourseAssessmentDetails courseAssessmentDetails) {
-        CourseAssessmentDetails newCourseAssessmentDetails= courseAssessmentDetailsRepository.save(courseAssessmentDetails);
-        return new ResponseEntity<>(newCourseAssessmentDetails,HttpStatus.CREATED);
-    }
-
-    
-
     @GetMapping("/{id}")
-    public ResponseEntity<CourseAssessmentDetails> courseAssessmentDetailss(@PathVariable Long id){
-    Optional<CourseAssessmentDetails> courseAssessmentDetails = courseAssessmentDetailsRepository.findById(id);
+    public ResponseEntity<CourseAssessmentDetails> getIdCourseAssessmentDetailss(@PathVariable Long id){
+    Optional<CourseAssessmentDetails> optionalCourseAssessmentDetails = courseAssessmentDetailsRepository.findById(id);
     
-    if (courseAssessmentDetails.isPresent()) {
-        return new ResponseEntity<>(courseAssessmentDetails.get(), HttpStatus.OK);
+    if (optionalCourseAssessmentDetails.isPresent()) {
+        return new ResponseEntity<>(optionalCourseAssessmentDetails.get(), HttpStatus.OK);
     } else {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     } }
 
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteCourseAssessmentDetails(@PathVariable Long id) {
-        Optional<CourseAssessmentDetails> optionalCourseAssessmentDetails = courseAssessmentDetailsRepository.findById(id);
-        if (optionalCourseAssessmentDetails.isPresent()) { // el Optional 
-            courseAssessmentDetailsRepository.deleteById(id);
-            return ResponseEntity.status(200).body("Deleted");
-        } else {
-            return ResponseEntity.status(404).body("Not Found");
-        }
+    @PostMapping
+    public ResponseEntity<String> addCourseAssessmentDetails(@RequestBody CourseAssessmentDetails courseAssessmentDetails) {
+        courseAssessmentDetailsRepository.save(courseAssessmentDetails);
+        return ResponseEntity.status(201).body("New item created");
     }
-
 
     @PutMapping("{id}")
     public ResponseEntity<String> updateCourseAssessmentDetails(@PathVariable Long id, @RequestBody CourseAssessmentDetails courseAssessmentDetails) {
@@ -163,7 +151,21 @@ public class CourseAssessmentDetailsController {
         } else {
             return ResponseEntity.status(404).body("Not Found");
         }
-    }  
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteCourseAssessmentDetails(@PathVariable Long id) {
+        Optional<CourseAssessmentDetails> optionalCourseAssessmentDetails = courseAssessmentDetailsRepository.findById(id);
+        if (optionalCourseAssessmentDetails.isPresent()) { 
+            courseAssessmentDetailsRepository.deleteById(id);
+            return ResponseEntity.status(200).body("Deleted");
+        } else {
+            return ResponseEntity.status(404).body("Not Found");
+        }
+    }
+
+
+      
 }
 
 

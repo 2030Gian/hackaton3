@@ -9,7 +9,6 @@ import com.example.hakaton2.repositorios.ProfessorRepository;
 import com.example.hakaton2.entidades.Professor;
 
 import java.util.List;
-import java.util.Optional;
 @RestController("ProfessorController")
 @RequestMapping("/professors")
 public class ProfessorController {
