@@ -156,13 +156,23 @@ public class CourseAssessmentDetailsController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteCourseAssessmentDetails(@PathVariable Long id) {
         Optional<CourseAssessmentDetails> optionalCourseAssessmentDetails = courseAssessmentDetailsRepository.findById(id);
+
         if (optionalCourseAssessmentDetails.isPresent()) { 
+            CourseAssessmentDetails existingCourseAssessmentDetails = optionalCourseAssessmentDetails.get();
+            
             courseAssessmentDetailsRepository.deleteById(id);
+            professorRepository.deleteById(existingCourseAssessmentDetails.getProfessor().getId());
+            studentRepository.deleteById(existingCourseAssessmentDetails.getStudent().getId());
+            courseAssessmentRepository.deleteById(existingCourseAssessmentDetails.getCourseAssessment().getId());
+            periodoRepository.deleteById(existingCourseAssessmentDetails.getCourseAssessment().getPeriodo().getId());
+            courseRepository.deleteById(existingCourseAssessmentDetails.getCourseAssessment().getCourse().getId());
+            courseTypeRepository.deleteById(existingCourseAssessmentDetails.getCourseAssessment().getCourse().getCourseType().getId());
             return ResponseEntity.status(200).body("Deleted");
         } else {
             return ResponseEntity.status(404).body("Not Found");
         }
     }
+
 
 
       
