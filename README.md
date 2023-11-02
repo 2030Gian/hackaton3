@@ -1,6 +1,39 @@
 # Hackatón
 ![Alt text](HT3.png)
-# CourseAssessmentDetails
+
+
+### Credenciales de la base de datos RDS
+
+---
+- Nombre de usuario maestro:
+```postgres```
+- Contraseña maestra:
+```mcbGiepIQSS5BvZridWZ```
+- Punto de enlace:
+```db-hackaton3.celv3oq2xmv2.us-east-1.rds.amazonaws.com```
+---
+***Deberás entregar la URL de la API desplegada en AWS.**
+---
+URL de mi aplicación corriendo en EC2
+IP:```50.16.144.14```
+```http://50.16.144.14:8080/course_types```
+---
+Imagen de la aplicación desplegada
+---
+![Alt text](image-48.png)
+---
+Imagen de prueba por Postman
+
+---
+![Alt text](image-49.png)
+---
+
+Ubuntu conectado a PostgreSQL 
+---
+![Alt text](image-50.png)
+---
+
+## CourseAssessmentDetails
 ---
 ```http://127.0.0.1:9090/course_assessment_details```
 
